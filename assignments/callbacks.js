@@ -60,12 +60,7 @@ function removeDuplicates(array, cb) {
 }
 
 function removeDuplicates2(array, cb) {
-    cb(
-        array.filter((val, i) => {
-            if (array.indexOf(val) === i) return true;
-            return false;
-        })
-    );
+    cb(array.filter((val, i) => array.indexOf(val) === i));
 }
 
 function removeDuplicates3(array, cb) {
