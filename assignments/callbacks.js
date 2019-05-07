@@ -58,3 +58,21 @@ function removeDuplicates(array, cb) {
     // Do not mutate the original array.
     cb([...new Set(array)]);
 }
+
+function removeDuplicates2(array, cb) {
+    cb(
+        array.filter((val, i) => {
+            if (array.indexOf(val) === i) return true;
+            return false;
+        })
+    );
+}
+
+function removeDuplicates3(array, cb) {
+    cb(
+        array.reduce((acc, cur) => {
+            if (acc.indexOf(cur) === -1) return [...acc, cur];
+            return acc;
+        })
+    );
+}
